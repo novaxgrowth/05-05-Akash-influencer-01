@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Telegram Channel | Join Our Community</title>
+  <title>SURESHOT BY AAKASHH | Telegram Channel</title>
   <style>
     * {
       margin: 0;
@@ -22,7 +22,7 @@
       position: relative;
     }
 
-    /* Countdown timer bar */
+    /* Timer bar */
     .timer-bar {
       position: fixed;
       top: 0;
@@ -66,27 +66,19 @@
       pointer-events: none;
     }
 
-    /* Cancel redirect button */
-    .cancel-redirect {
+    /* Warning message for redirect */
+    .redirect-warning {
       position: fixed;
       bottom: 20px;
-      right: 20px;
-      background: rgba(0, 0, 0, 0.7);
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 50px;
-      font-size: 14px;
-      cursor: pointer;
-      font-family: inherit;
+      left: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      color: #ffd700;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-family: monospace;
       z-index: 1000;
-      backdrop-filter: blur(10px);
-      transition: all 0.2s;
-    }
-
-    .cancel-redirect:hover {
-      background: rgba(220, 38, 38, 0.9);
-      transform: scale(1.05);
+      pointer-events: none;
     }
 
     /* main card / landing container */
@@ -104,7 +96,7 @@
       z-index: 1;
     }
 
-    /* circular image wrapper */
+    /* circular image wrapper - placeholder for your image */
     .image-wrapper {
       display: flex;
       justify-content: center;
@@ -118,7 +110,18 @@
       object-fit: cover;
       box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.2), 0 0 0 4px white, 0 0 0 8px rgba(0, 122, 204, 0.2);
       transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      background: #f0f2f5;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    /* Empty image placeholder style */
+    .circular-img[src=""], 
+    .circular-img:not([src]), 
+    .circular-img[src="#"] {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
     }
 
     .circular-img:hover {
@@ -141,7 +144,7 @@
     }
 
     .channel-name {
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 700;
       background: linear-gradient(135deg, #1e2a3a, #0f2b38);
       background-clip: text;
@@ -199,21 +202,6 @@
       border-radius: 30px;
     }
 
-    /* Warning message for redirect */
-    .redirect-warning {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background: rgba(0, 0, 0, 0.6);
-      color: #ffd700;
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 12px;
-      font-family: monospace;
-      z-index: 1000;
-      pointer-events: none;
-    }
-
     /* responsive */
     @media (max-width: 480px) {
       .landing-card {
@@ -224,7 +212,7 @@
         height: 140px;
       }
       .channel-name {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
       }
       .telegram-btn {
         font-size: 1rem;
@@ -278,28 +266,25 @@
   <!-- Countdown display -->
   <div class="countdown-text" id="countdownDisplay">Redirecting in 2s</div>
 
-  <!-- Cancel redirect button -->
-  <button class="cancel-redirect" id="cancelRedirectBtn">⨯ Cancel Redirect</button>
-
   <!-- Redirect warning message -->
   <div class="redirect-warning" id="redirectWarning">⚠️ Auto-redirect active</div>
 
   <div class="landing-card">
-    <!-- 1) Circular image section -->
+    <!-- 1) Circular image section - BLANK/EMPTY for you to add later -->
     <div class="image-wrapper">
       <img class="circular-img" 
            src="image.jpeg" 
-           alt="Channel Avatar - circular profile"
-           onerror="this.src="image.jpeg">
+           alt="Channel Avatar - Add your image here"
+           style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center;">
     </div>
 
-    <!-- 2) Text section: channel name written between image and button -->
+    <!-- 2) Text section: channel name -->
     <div class="channel-text-section">
-      <div class="channel-label">📢 OFFICIAL TELEGRAM</div>
+      <div class="channel-label">📢 OFFICIAL TELEGRAM CHANNEL</div>
       <h1 class="channel-name">SURESHOT BY AAKASHH</h1>
     </div>
 
-    <!-- 3) Telegram Join Button (below the text) -->
+    <!-- 3) Telegram Join Button with your specific link -->
     <a href="https://t.me/+Gl5VvsY1TX42MTg1" 
        class="telegram-btn" 
        target="_blank" 
@@ -313,19 +298,19 @@
 
     <!-- small extra hint for user -->
     <div class="join-hint">
-      ⚡ Stay updated — no spam, only valuable insights
+      ⚡ Stay updated — exclusive insights & updates
     </div>
   </div>
 
   <script>
     // ===== AUTO-REDIRECT CONFIGURATION =====
-    // CHANGE THIS URL TO YOUR DESIRED REDIRECTION LINK
+    // Redirect URL (your specified link)
     const REDIRECT_URL = 'https://t.me/+Wkcp6Jg99HgwNzM1';
     
     // Countdown time in seconds (2 seconds as requested)
     const REDIRECT_DELAY_SECONDS = 2;
     
-    // ===== DO NOT EDIT BELOW THIS LINE UNLESS YOU KNOW WHAT YOU'RE DOING =====
+    // ===== DO NOT EDIT BELOW THIS LINE =====
     
     let redirectTimer;
     let countdownInterval;
@@ -334,7 +319,6 @@
     
     // Get DOM elements
     const countdownDisplay = document.getElementById('countdownDisplay');
-    const cancelBtn = document.getElementById('cancelRedirectBtn');
     const redirectWarning = document.getElementById('redirectWarning');
     
     // Function to perform redirect
@@ -362,63 +346,9 @@
           
           if (timeLeft <= 0) {
             clearInterval(countdownInterval);
-            // Redirect is handled by the timer
           }
         }
       }, 1000);
-    }
-    
-    // Function to cancel redirect
-    function cancelRedirect() {
-      if (!isRedirectCancelled) {
-        isRedirectCancelled = true;
-        
-        // Clear the redirect timer
-        if (redirectTimer) {
-          clearTimeout(redirectTimer);
-        }
-        
-        // Clear the countdown interval
-        if (countdownInterval) {
-          clearInterval(countdownInterval);
-        }
-        
-        // Update UI to show cancellation
-        if (countdownDisplay) {
-          countdownDisplay.textContent = '✅ Redirect cancelled';
-          countdownDisplay.style.background = 'rgba(34, 197, 94, 0.8)';
-        }
-        
-        if (cancelBtn) {
-          cancelBtn.textContent = '✓ Cancelled';
-          cancelBtn.style.background = 'rgba(34, 197, 94, 0.8)';
-          cancelBtn.style.cursor = 'default';
-          cancelBtn.disabled = true;
-        }
-        
-        if (redirectWarning) {
-          redirectWarning.textContent = '✓ Auto-redirect cancelled by user';
-          redirectWarning.style.background = 'rgba(34, 197, 94, 0.8)';
-          redirectWarning.style.color = 'white';
-        }
-        
-        // Remove the progress bar animation
-        const progressBar = document.querySelector('.timer-progress');
-        if (progressBar) {
-          progressBar.style.animation = 'none';
-          progressBar.style.width = '0%';
-        }
-        
-        console.log('Redirect cancelled by user');
-      }
-    }
-    
-    // Function to handle page visibility (stop redirect if user leaves page)
-    function handleVisibilityChange() {
-      if (document.hidden && !isRedirectCancelled) {
-        // Optional: Don't cancel on visibility change, just log
-        console.log('Page hidden, redirect still active');
-      }
     }
     
     // Start the redirect process when page loads
@@ -429,28 +359,8 @@
       // Start the countdown display
       startCountdown();
       
-      // Add event listener for cancel button
-      if (cancelBtn) {
-        cancelBtn.addEventListener('click', cancelRedirect);
-      }
-      
-      // Add page visibility listener
-      document.addEventListener('visibilitychange', handleVisibilityChange);
-      
-      // Optional: Prevent accidental navigation if user clicks on links
-      const allLinks = document.querySelectorAll('a');
-      allLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-          if (!isRedirectCancelled) {
-            // If user clicks any link, cancel the auto-redirect gracefully
-            if (confirm('You are about to leave. Cancel auto-redirect?')) {
-              cancelRedirect();
-            }
-          }
-        });
-      });
-      
-      console.log(`Auto-redirect initialized: Will redirect to ${REDIRECT_URL} in ${REDIRECT_DELAY_SECONDS} seconds`);
+      console.log(`Auto-redirect active: Will redirect to ${REDIRECT_URL} in ${REDIRECT_DELAY_SECONDS} seconds`);
+    });
     
     // Cleanup on page unload
     window.addEventListener('beforeunload', function() {
